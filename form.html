@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script type = "text/javascript">   
+
+function result()
+    {
+    var n=document.getElementById("total").value; 
+    var showers=document.getElementById("shower").value; 
+    var showerlength=document.getElementById("showerlength").value; 
+    var flushes=document.getElementById("flushes").value; 
+    var amt_of_flush=document.getElementById("avgflush").value; 
+    var Tap_times=document.getElementById("Tap").value; 
+    var Tap_length=document.getElementById("Tapmin").value; 
+    var dishes=document.getElementById("dishes").value; 
+    var dish_length=document.getElementById("dishesavg").value;  
+    var dishwasher=document.getElementById("dishwasher").value; 
+    var dishwasher_amount=document.getElementById("dishwasheravg").value; 
+    var loads=document.getElementById("laundry").value; 
+    var washing_machine=document.getElementById("washingmachine").value; 
+    var sprinkler=document.getElementById("lawn").value;
+    var sprinkler_time=document.getElementById("lawnmin").value;
+
+    
+    
+    var bathroom = showerlength * showers;
+    var value1 = bathroom * 9.5;
+
+    var toilet = flushes * amt_of_flush;
+    var value2 = toilet;
+
+    var tap = Tap_times * Tap_length;
+    var value3 = tap * 2.5;
+
+    var dishresult = dishes * dish_length;
+    var dishresult2 = (dishwasher/7) * dishwasher_amount;
+    var value4 = (dishresult * 2.5) + dishresult2;
+
+    var laundryresult = loads * washing_machine;
+    var value5 = laundryresult;
+
+    var spinklerresult = (sprinkler/7) * (16/sprinkler_time);
+    var value6 = spinklerresult;
+
+    var RESULTS = n*(value1+value2+value3+value4+value5+value6); 
+    var Resultsyear = RESULTS * 12;
+
+    
+
+    document.getElementById('reshower').value=value1;
+    document.getElementById('retoilet').value=value2;
+    document.getElementById('retaps').value=value3;
+    document.getElementById('redishes').value=dishresult;
+    document.getElementById('redishwasher').value=dishresult2;
+    document.getElementById('relaundry').value=value5;
+    document.getElementById('relawn').value=value6;
+    document.getElementById('finalresult').value=RESULTS;
+    document.getElementById('yearresult').value=Resultsyear;
+   
+} 
+ </script> 
+
+
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <title>Form</title>
+  </head>
+  <body>
+    
+    <div style = "width: 100%; height: 100%; line-height: 3em; overflow:hidden; border: thin #000 solid; padding: 5px;">
+   <div style="background-color: rgb(189, 189, 247); height: max-content;">
+    <center>
+    <center><h2> Calculate Your Water Print</h2></center>
+    <center>
+      <h5>
+        To estimate the amount of water your household consumes, fill out the form below and press the Calculate button.
+        You can use this form to see where you can reduce your water consumption by limiting shower times, installing
+        new water fixtures, and reducing the number of laundry & dishwasher loads.
+      </h5>
+    </center>
+    
+    <form class="row-12">
+      <div class="col-12">
+        <label for="total" class="form-label">Total Number of People in Your houseHold</label>
+        <input type="number" class="form-control" id="total" style="width: 30%;">
+      </div>
+      <br/>
+      <div style="background-color: rgb(152, 200, 204); height: max-content;"> 
+      <h4>Bathroom Water Use</h4>
+      <div class="col-12">
+        <label for="shower" class="form-label">How many showers per day on average does each member of your household take?</label>
+        <input type="number" class="form-control" id="shower" style="width: 30%;">
+      </div>
+      <div class="col-12">
+        <label for="showerlength" class="form-label">What is the average length (in minutes) of each shower? (10 minutes is average)</label>
+        <input type="number" class="form-control" id="showerlength" style="width: 30%;">
+      </div>
+      <br/>
+      </div>
+      <h4>Toilet Water Use</h4>
+      <div class="col-12">
+        <label for="flushes" class="form-label">What is the average number of times each person flushes a toilet in your household per day? (4 is average)</label>
+        <input type="number" class="form-control" id="flushes" style="width: 30%;">
+      </div>
+      <div class="col-12">
+        <label for="avgflush" class="form-label">How many litres does your toilet use per flush? (6 for standard toilets 4.5 for dual flush toilets)</label>
+        <input type="number" class="form-control" id="avgflush" style="width: 30%;">
+      </div>
+      <br/>
+      <div style="background-color: rgb(152, 200, 204); height: max-content;"> 
+      <h4>Water Taps Use</h4>
+      <div class="col-12">
+        <label for="Tap" class="form-label">How many times each day does each household member use water taps to shave,
+          brush teeth, wash hands and face, etc.? (3 is average)</label>
+        <input type="number" class="form-control" id="Tap" style="width: 30%;">
+      </div>
+      <div class="col-12">
+        <label for="Tapmin" class="form-label">How many minutes on average does the water run during each use? (1 minute is average)</label>
+        <input type="number" class="form-control" id="Tapmin" style="width: 30%;">
+      </div>
+      <br/>
+      </div>
+      <h4>Washing Dishes</h4>
+      <div class="col-12">
+        <label for="dishes" class="form-label">How many times are dishes washed by hand each day?</label>
+        <input type="number" class="form-control" id="dishes" style="width: 30%;">
+      </div>
+      <div class="col-12">
+        <label for="dishesavg" class="form-label">How many minutes on average does the water run during each dishwashing?</label>
+        <input type="number" class="form-control" id="dishesavg" style="width: 30%;">
+      </div>
+      <div class="col-12">
+        <label for="dishwasher" class="form-label">If you have a dishwasher, how many times is it used each week?</label>
+        <input type="number" class="form-control" id="dishwasher" style="width: 30%;">
+      </div>
+      <div class="col-12">
+        <label for="dishwasheravg" class="form-label">The average dishwasher uses 25 litres of water per load. Change this number if yours is different</label>
+        <input type="number" class="form-control" id="dishwasheravg" style="width: 30%;">
+      </div>
+      <br/>
+      <div style="background-color: rgb(152, 200, 204); height: max-content;"> 
+      <h4>Laundry Water Use</h4>
+      <div class="col-12">
+        <label for="laundry" class="form-label">How many loads of laundry are done by members of your household each week.</label>
+        <input type="number" class="form-control" id="laundry" style="width: 30%;">
+      </div>
+      <div class="col-12">
+        <label for="washingmachine" class="form-label">The average new top loading washing machine uses 50 litres of water per load, old ones may take 100 litres, change this number if yours is different.</label>
+        <input type="number" class="form-control" id="washingmachine" style="width: 30%;">
+      </div>
+      <br/>
+      </div>
+      <h4>Lawn Water Use</h4>
+      <div class="col-12">
+        <label for="lawn" class="form-label">How many times is your lawn watered through a sprinkler system each week?</label>
+        <input type="number" class="form-control" id="lawn" style="width: 30%;">
+      </div>
+
+      <div class="col-12">
+        <label for="lawnmin" class="form-label">How many minutes is the lawn watered per watering? (Usage is 16 litres per minute for 2 taps)</label>
+        <input type="number" class="form-control" id="lawnmin" style="width: 30%;">
+      </div> 
+
+<br/>
+
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary" onclick = "result()"> Calculate results </button>
+      </div>
+    
+    
+    </form>
+
+  </center>
+<br/>
+<div style="background-color: rgb(235, 207, 147); height: max-content;"> 
+ <center>
+   <h4><i><u>RESULTS</u></i></h4>
+   <br/>
+   <h5><i>Daily water use (litres) per person in your household</i></h5>
+   
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <p><label for="reshower" class="form-label">Showers & Baths</label>
+          <input type="number" class="form-control" id="reshower" style="width: 30%;"></p>
+      </div>
+      <div class="col-sm-6">
+        <p><label for="retoilet" class="form-label">Toilets</label>
+          <input type="number" class="form-control" id="retoilet" style="width: 30%;"></p>
+      </div>
+      <div class="col-sm-6">
+        <p><label for="retaps" class="form-label">Water taps</label>
+          <input type="number" class="form-control" id="retaps" style="width: 30%;"></p>
+      </div>
+      <div class="col-sm-6">
+        <p><label for="retaps" class="form-label">Hand Washing Dishes</label>
+          <input type="number" class="form-control" id="redishes" style="width: 30%;"></p>
+      </div>
+      <div class="col-sm-6">
+        <p><label for="retaps" class="form-label">Dishwasher</label>
+          <input type="number" class="form-control" id="redishwasher" style="width: 30%;"></p>
+      </div>
+      <div class="col-sm-6">
+        <p><label for="retaps" class="form-label">Laundry</label>
+          <input type="number" class="form-control" id="relaundry" style="width: 30%;"></p>
+      </div>
+      <div class="col-sm-6">
+        <p><label for="retaps" class="form-label">Lawn Watering</label>
+          <input type="number" class="form-control" id="relawn" style="width: 30%;"></p>
+      </div>
+      
+    </div>
+    </div>
+    </center>
+  </div>
+    
+    <div style="background-color: rgb(210, 235, 182); height: max-content;"> 
+      <center>
+        <h5><i>Comparison between your household
+          and an average Indian household</i></h5>
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6">
+            <p><label for="reshower" class="form-label">Your houseHold Daily Usage</label>
+              <input type="number" class="form-control" id="finalresult" style="width: 30%;"></p>
+          </div>
+          <div class="col-sm-6">
+            <p><label for="reshower" class="form-label">Indian Average Household Usage Daily</label>
+              <br/>
+              <label for="reshower" class="form-label">398 Litres</label></p>
+          </div>
+          <div class="col-sm-6">
+            <p><label for="reshower" class="form-label">Your houseHold Yearly Usage</label>
+              <input type="number" class="form-control" id="yearresult" style="width: 30%;"></p>
+          </div>
+          <div class="col-sm-6">
+            <p><label for="reshower" class="form-label">Indian Average Household Usage yealy</label>
+              <br/>
+              <label for="reshower" class="form-label">145,270 Litres</label></p>
+             </div>
+    <br/>
+        <label>* All calculations are rounded to the nearest litre</label>
+        
+        
+        
+        </div>
+        </div>
+     </center>
+      </div>
+ 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+    
+  </div>
+  </body>
+</html>
