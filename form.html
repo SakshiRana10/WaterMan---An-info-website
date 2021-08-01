@@ -39,23 +39,23 @@ function result()
     var laundryresult = loads * washing_machine;
     var value5 = laundryresult;
 
-    var spinklerresult = (sprinkler/7) * (16/sprinkler_time);
+    var spinklerresult = (sprinkler * (16*sprinkler_time))/7;
     var value6 = spinklerresult;
 
     var RESULTS = n*(value1+value2+value3+value4+value5+value6); 
-    var Resultsyear = RESULTS * 12;
+    var Resultsyear = RESULTS * 365;
 
     
 
-    document.getElementById('reshower').value=value1;
-    document.getElementById('retoilet').value=value2;
-    document.getElementById('retaps').value=value3;
-    document.getElementById('redishes').value=dishresult;
-    document.getElementById('redishwasher').value=dishresult2;
-    document.getElementById('relaundry').value=value5;
-    document.getElementById('relawn').value=value6;
-    document.getElementById('finalresult').value=RESULTS;
-    document.getElementById('yearresult').value=Resultsyear;
+    document.getElementById('reshower').value=parseInt(value1);
+    document.getElementById('retoilet').value=parseInt(value2);
+    document.getElementById('retaps').value=parseInt(value3);
+    document.getElementById('redishes').value=parseInt(dishresult);
+    document.getElementById('redishwasher').value=parseInt(dishresult2);
+    document.getElementById('relaundry').value=parseInt(value5);
+    document.getElementById('relawn').value=parseInt(value6);
+    document.getElementById('finalresult').value=parseInt(RESULTS);
+    document.getElementById('yearresult').value=parseInt(Resultsyear);
    
 } 
  </script> 
@@ -170,7 +170,7 @@ function result()
 <br/>
 
       <div class="col-12">
-        <button type="submit" class="btn btn-primary" onclick = "result()"> Calculate results </button>
+        <button type="button" class="btn btn-primary" onclick = "result()"> Calculate results </button>
       </div>
     
     
